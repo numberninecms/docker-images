@@ -4,7 +4,7 @@
 
 [Docker hub page](https://hub.docker.com/r/numberninecms/php)
 
-This image is based on [kreait/php](https://hub.docker.com/r/kreait/php) with opcache and exif php extensions added.
+This image is based on [kreait/php](https://hub.docker.com/r/kreait/php) with opcache, exif, apcu and redis PHP extensions added.
 
 Tags:
 
