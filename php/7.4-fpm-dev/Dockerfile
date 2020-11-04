@@ -9,3 +9,4 @@ RUN apk add --no-cache \
         php7-redis \
     ;
 
+COPY --from=composer /usr/bin/composer /usr/bin/composer
