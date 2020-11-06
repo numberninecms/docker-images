@@ -9,4 +9,8 @@ RUN apk add --no-cache \
         php7-redis \
     ;
 
+ENV COMPOSER_ALLOW_SUPERUSER 1
+ENV COMPOSER_HOME /tmp
+
 COPY --from=composer /usr/bin/composer /usr/bin/composer
+RUN find /tmp -type d -exec chmod -v 1777 {} +
