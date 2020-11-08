@@ -14,3 +14,5 @@ ENV COMPOSER_HOME /tmp
 
 COPY --from=composer /usr/bin/composer /usr/bin/composer
 RUN find /tmp -type d -exec chmod -v 1777 {} +
+
+COPY --from=alpine/make:latest /usr/bin/make /usr/bin/make
