@@ -3,6 +3,7 @@ ARG PHP_VERSION=7.4
 FROM kreait/php:${PHP_VERSION}-fpm-dev
 
 RUN apk add --no-cache \
+        curl \
         php7-exif \
         php7-opcache \
         php7-apcu \
@@ -16,3 +17,11 @@ COPY --from=composer /usr/bin/composer /usr/bin/composer
 RUN find /tmp -type d -exec chmod -v 1777 {} +
 
 COPY --from=alpine/make:latest /usr/bin/make /usr/bin/make
+
+RUN version=$(php -r "echo PHP_MAJOR_VERSION.PHP_MINOR_VERSION;") \
+    && curl -A "Docker" -o /tmp/blackfire-probe.tar.gz -D - -L -s https://blackfire.io/api/v1/releases/probe/php/alpine/amd64/$version \
+    && mkdir -p /tmp/blackfire \
+    && tar zxpf /tmp/blackfire-probe.tar.gz -C /tmp/blackfire \
+    && mv /tmp/blackfire/blackfire-*.so $(php -r "echo ini_get ('extension_dir');")/blackfire.so \
+    && printf "extension=blackfire.so\nblackfire.agent_socket=tcp://blackfire:8707\n" > /etc/php7/conf.d/blackfire.ini \
+    && rm -rf /tmp/blackfire /tmp/blackfire-probe.tar.gz
