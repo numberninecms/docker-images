@@ -1,23 +1,29 @@
+# PHP
 ARG PHP_VERSION=7.4
-
 FROM kreait/php:${PHP_VERSION}-fpm-dev
 
-RUN apk add --no-cache \
+RUN apk del php7-xdebug && \
+    apk add --no-cache \
         curl \
+        openssl \
+        python3 \
+        php7-pecl-xdebug \
         php7-exif \
         php7-opcache \
         php7-apcu \
         php7-redis \
     ;
 
+# Composer
 ENV COMPOSER_ALLOW_SUPERUSER 1
 ENV COMPOSER_HOME /tmp
-
 COPY --from=composer /usr/bin/composer /usr/bin/composer
 RUN find /tmp -type d -exec chmod -v 1777 {} +
 
+# Make
 COPY --from=alpine/make:latest /usr/bin/make /usr/bin/make
 
+# Blackfire
 RUN version=$(php -r "echo PHP_MAJOR_VERSION.PHP_MINOR_VERSION;") \
     && curl -A "Docker" -o /tmp/blackfire-probe.tar.gz -D - -L -s https://blackfire.io/api/v1/releases/probe/php/alpine/amd64/$version \
     && mkdir -p /tmp/blackfire \
