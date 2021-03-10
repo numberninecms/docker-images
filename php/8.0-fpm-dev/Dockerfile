@@ -1,16 +1,13 @@
 # PHP
-ARG PHP_VERSION=7.4
-FROM kreait/php:${PHP_VERSION}-fpm-dev
+ARG PHP_VERSION=8.0
+FROM williarin/php:${PHP_VERSION}-fpm-dev
 
-RUN apk del php7-xdebug && \
-    apk add --no-cache \
+RUN apk add --no-cache \
         curl \
         openssl \
-        php7-pecl-xdebug \
-        php7-exif \
-        php7-opcache \
-        php7-apcu \
-        php7-redis \
+        php8-exif \
+        php8-apcu \
+        php8-redis \
     ;
 
 # Composer

@@ -1,12 +1,29 @@
 # NumberNine Docker images
 
-## numberninecms/php
+## PHP 7.4 and 8.0 for production and development
 
-[Docker hub page](https://hub.docker.com/r/numberninecms/php)
+### Presentation
 
-This image is based on `[kreait/php](https://hub.docker.com/r/kreait/php)` with opcache, exif, apcu and redis PHP extensions added.
+These PHP images all come with opcache, exif, apcu and redis extensions.
 
-Tags:
+Production version suffixed with `-fpm` are bundled with:
 
-* `7.4-fpm` with `Cachetool` to run on production server
-* `7.4-fpm-dev` (with `xdebug 3.0` and `blackfire` extensions activated, `composer`, `make` and `Cachetool` available)
+* APCu
+* OPcache
+* Cachetool (clear OPcache and ACPu from CLI)
+
+Additionally, development versions suffixed with `-fpm-dev` are bundled with same tools as production image, and:
+
+* Xdebug 3
+* Composer 2
+* GNU Make
+* Blackfire probe
+
+### Available tags:
+
+| Image  | Size |
+| --- | --- |
+| numberninecms/php:7.4-fpm          | [![](https://img.shields.io/docker/image-size/numberninecms/php/7.4-fpm)](https://hub.docker.com/r/numberninecms/php)         |
+| numberninecms/php:7.4-fpm-dev      | [![](https://img.shields.io/docker/image-size/numberninecms/php/7.4-fpm-dev)](https://hub.docker.com/r/numberninecms/php)     |
+| numberninecms/php:8.0-fpm      | [![](https://img.shields.io/docker/image-size/numberninecms/php/8.0-fpm)](https://hub.docker.com/r/numberninecms/php)     |
+| numberninecms/php:8.0-fpm-dev  | [![](https://img.shields.io/docker/image-size/numberninecms/php/8.0-fpm-dev)](https://hub.docker.com/r/numberninecms/php) |
