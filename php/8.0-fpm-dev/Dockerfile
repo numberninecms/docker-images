@@ -7,8 +7,8 @@ RUN apk add --no-cache \
         curl \
         openssl \
         php8-exif \
-        php8-apcu \
-        php8-redis \
+        php8-pecl-apcu \
+        php8-pecl-redis \
     ;
 
 # Composer
