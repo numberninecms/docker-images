@@ -6,6 +6,7 @@ FROM williarin/php:${PHP_VERSION}-fpm-dev
 RUN apk add --no-cache \
         curl \
         openssl \
+        git \
         php7-exif \
         php7-apcu \
         php7-redis \
