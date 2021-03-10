@@ -1,5 +1,6 @@
 # PHP
 ARG PHP_VERSION=8.0
+
 FROM williarin/php:${PHP_VERSION}-fpm-dev
 
 RUN apk add --no-cache \

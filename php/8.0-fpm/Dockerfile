@@ -3,9 +3,9 @@ ARG PHP_VERSION=8.0
 FROM williarin/php:${PHP_VERSION}-fpm
 
 RUN apk add --no-cache \
-    php8-exif \
-    php8-apcu \
-    php8-redis \
+        php8-exif \
+        php8-apcu \
+        php8-redis \
     ;
 
 RUN set -eux; \
