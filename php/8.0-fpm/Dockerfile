@@ -4,8 +4,8 @@ FROM williarin/php:${PHP_VERSION}-fpm
 
 RUN apk add --no-cache \
         php8-exif \
-        php8-apcu \
-        php8-redis \
+        php8-pecl-apcu \
+        php8-pecl-redis \
     ;
 
 RUN set -eux; \
