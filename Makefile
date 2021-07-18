@@ -19,12 +19,12 @@ php8:
 test-php: test-php7 test-php8
 
 test-php7:
-	docker container run $(DOCKER_RUN_TEST_OPTIONS) numberninecms/php:7.4-fpm bash -c "php -v | grep '7\.4'"
-	docker container run $(DOCKER_RUN_TEST_OPTIONS) numberninecms/php:7.4-fpm-dev bash -c "php -v | grep '7\.4' && php -v | grep 'Xdebug v3'"
+	docker run $(DOCKER_RUN_TEST_OPTIONS) numberninecms/php:7.4-fpm bash -c "php -v | grep '7\.4'"
+	docker run $(DOCKER_RUN_TEST_OPTIONS) numberninecms/php:7.4-fpm-dev bash -c "php -v | grep '7\.4' && php -v | grep 'Xdebug v3'"
 
 test-php8:
-	docker container run $(DOCKER_RUN_TEST_OPTIONS) numberninecms/php:8.0-fpm bash -c "php -v | grep '8\.0'"
-	docker container run $(DOCKER_RUN_TEST_OPTIONS) numberninecms/php:8.0-fpm-dev bash -c "php -v | grep '8\.0' && php -v | grep 'Xdebug v3'"
+	docker run $(DOCKER_RUN_TEST_OPTIONS) numberninecms/php:8.0-fpm bash -c "php -v | grep '8\.0'"
+	docker run $(DOCKER_RUN_TEST_OPTIONS) numberninecms/php:8.0-fpm-dev bash -c "php -v | grep '8\.0' && php -v | grep 'Xdebug v3'"
 
 .PHONY: deploy deploy7 deploy8
 deploy: deploy7 deploy8
