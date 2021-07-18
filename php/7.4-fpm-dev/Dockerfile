@@ -4,12 +4,13 @@ ARG PHP_VERSION=7.4
 FROM williarin/php:${PHP_VERSION}-fpm-dev
 
 RUN apk add --no-cache \
-        curl \
-        openssl \
-        git \
-        php7-exif \
-        php7-apcu \
-        php7-redis \
+    curl \
+    openssl \
+    git \
+    php7-exif \
+    php7-apcu \
+    php7-redis \
+    php7-sysvsem \
     ;
 
 # Composer

@@ -3,9 +3,10 @@ ARG PHP_VERSION=7.4
 FROM williarin/php:${PHP_VERSION}-fpm
 
 RUN apk add --no-cache \
-        php7-exif \
-        php7-apcu \
-        php7-redis \
+    php7-exif \
+    php7-apcu \
+    php7-redis \
+    php7-sysvsem \
     ;
 
 RUN set -eux; \
