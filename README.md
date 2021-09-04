@@ -1,10 +1,10 @@
 # NumberNine Docker images
 
-## PHP 7.4 and 8.0 for production and development
+## PHP 7.4, 8.0 and 8.1 for production and development
 
 ### Presentation
 
-These PHP images all come with opcache, exif, apcu and redis extensions.
+These PHP images all come with `opcache`, `exif`, `apcu` and `redis` extensions.
 
 Production version suffixed with `-fpm` are bundled with:
 
@@ -18,7 +18,9 @@ Additionally, development versions suffixed with `-fpm-dev` are bundled with sam
 * Xdebug 3
 * Composer 2
 * GNU Make
-* Blackfire probe
+* Blackfire probe _(7.4 and 8.0 only)_
+
+_**Note:** PHP 8.1 images are not production ready, based on Alpine Linux edge and preview PHP 8.1 version_
 
 ### Available tags:
 
@@ -28,3 +30,5 @@ Additionally, development versions suffixed with `-fpm-dev` are bundled with sam
 | numberninecms/php:7.4-fpm-dev | [![](https://img.shields.io/docker/image-size/numberninecms/php/7.4-fpm-dev)](https://hub.docker.com/r/numberninecms/php) |
 | numberninecms/php:8.0-fpm     | [![](https://img.shields.io/docker/image-size/numberninecms/php/8.0-fpm)](https://hub.docker.com/r/numberninecms/php)     |
 | numberninecms/php:8.0-fpm-dev | [![](https://img.shields.io/docker/image-size/numberninecms/php/8.0-fpm-dev)](https://hub.docker.com/r/numberninecms/php) |
+| numberninecms/php:8.1-fpm     | [![](https://img.shields.io/docker/image-size/numberninecms/php/8.1-fpm)](https://hub.docker.com/r/numberninecms/php)     |
+| numberninecms/php:8.1-fpm-dev | [![](https://img.shields.io/docker/image-size/numberninecms/php/8.1-fpm-dev)](https://hub.docker.com/r/numberninecms/php) |
