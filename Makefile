@@ -31,7 +31,7 @@ test-php8:
 	docker run $(DOCKER_RUN_TEST_OPTIONS) numberninecms/php:8.0-fpm-dev bash -c "php -v | grep '8\.0' && php -v | grep 'Xdebug v3'"
 
 test-php81:
-	docker run $(DOCKER_RUN_TEST_OPTIONS) numberninecms/php:8.1-fpm bash -c "php -v | grep '8\.0'"
+	docker run $(DOCKER_RUN_TEST_OPTIONS) numberninecms/php:8.1-fpm bash -c "php -v | grep '8\.1'"
 	docker run $(DOCKER_RUN_TEST_OPTIONS) numberninecms/php:8.1-fpm-dev bash -c "php -v | grep '8\.1' && php -v | grep 'Xdebug v3'"
 
 .PHONY: deploy deploy7 deploy8 deploy81
