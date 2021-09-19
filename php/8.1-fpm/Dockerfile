@@ -3,6 +3,8 @@ ARG PHP_VERSION=8.1
 FROM williarin/php:${PHP_VERSION}-fpm
 
 RUN apk add --no-cache \
+    wget \
+    openssl \
     php81-exif \
     php81-pecl-apcu \
     php81-pecl-redis \

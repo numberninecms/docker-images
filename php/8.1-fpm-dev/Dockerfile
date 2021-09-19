@@ -4,6 +4,7 @@ ARG PHP_VERSION=8.1
 FROM williarin/php:${PHP_VERSION}-fpm-dev
 
 RUN apk add --no-cache \
+    wget \
     curl \
     openssl \
     git \
