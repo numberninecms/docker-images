@@ -5,6 +5,9 @@ FROM williarin/php:${PHP_VERSION}-fpm
 RUN apk add --no-cache \
     wget \
     openssl \
+    ;
+
+RUN apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing/ add \
     php81-exif \
     php81-pecl-apcu \
     php81-pecl-redis \
