@@ -20,8 +20,6 @@ Additionally, development versions suffixed with `-fpm-dev` are bundled with sam
 * GNU Make
 * Blackfire probe _(7.4 and 8.0 only)_
 
-_**Note:** PHP 8.1 images are not production ready, based on Alpine Linux edge and preview PHP 8.1 version_
-
 ### Available tags:
 
 | Image  | Size |
