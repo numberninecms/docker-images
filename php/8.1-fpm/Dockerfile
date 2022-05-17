@@ -7,7 +7,7 @@ RUN apk add --no-cache \
     openssl \
     ;
 
-RUN apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing/ add \
+RUN apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/ add \
     php81-exif \
     php81-pecl-apcu \
     php81-pecl-redis \
