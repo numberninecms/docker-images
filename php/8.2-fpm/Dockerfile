@@ -1,4 +1,4 @@
-ARG PHP_VERSION=8.1
+ARG PHP_VERSION=8.2
 
 FROM williarin/php:${PHP_VERSION}-fpm
 
@@ -8,10 +8,10 @@ RUN apk add --no-cache \
     ;
 
 RUN apk --no-cache add \
-    php81-exif \
-    php81-pecl-apcu \
-    php81-pecl-redis \
-    php81-sysvsem \
+    php82-exif \
+    php82-pecl-apcu \
+    php82-pecl-redis \
+    php82-sysvsem \
     ;
 
 RUN set -eux; \
